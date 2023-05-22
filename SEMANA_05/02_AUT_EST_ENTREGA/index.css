@@ -87,3 +87,24 @@ img {
     margin-top: 20%;
     margin-left: 30%;
 }
+
+/* Celular */
+@media screen and (max-width: 480px) {
+    p {
+      font-size: 18px;
+    }
+  }
+
+/* Tablet */
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    p {
+      font-size: 17px;
+    }
+  }
+
+/* Desktop */
+@media all and (min-width: 480px) and (max-width: 768px) { 
+    p {
+      font-size: 16px;
+    }
+  }
