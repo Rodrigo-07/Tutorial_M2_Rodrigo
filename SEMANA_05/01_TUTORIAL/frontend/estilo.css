@@ -54,6 +54,12 @@
         background-color: #666;
         text-align: center;
     }
+
+	#size{
+	color: black; 
+	text-align: center; 
+
+	}
 /*seletores para desktops*/
 @media screen and (max-width: 1128px) {
 	#conteudo{ 
@@ -91,5 +97,8 @@
 	   background:rgb(118, 118, 24);
 	   float: none;
        height: auto;
+	}
+	#size{
+		color: white;
 	}
 }

@@ -10,6 +10,7 @@
   <div id="principal">
     <div id="logo"><img src="https://www.inteli.edu.br/wp-content/uploads/2022/04/28103439/Logo-Container.png" alt="Logotipo Inteli"></div>
     <div id="conteudo">
+      <div id="size"></div>
       <div class="interno">
         <h1>Institucional</h1>
         <p><img src="https://www.inteli.edu.br/wp-content/uploads/2022/07/06094246/novoformato_bannerhome_site_1440x640px-06-1.png" alt="Inteli"></p>
@@ -25,5 +26,12 @@
       <p>Todos os direitos reservados.</p>
     </div>
   </div>
+
+  <script>
+    document.getElementById("size").innerHTML = `Size: ${window.innerWidth} X ${window.innerHeight} `;
+    addEventListener("resize", (event) => {
+      document.getElementById("size").innerHTML = `Size: ${window.innerWidth} X ${window.innerHeight} `;
+    });
+  </script>
 </body>
 </html>
