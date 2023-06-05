@@ -52,7 +52,14 @@ app.post('/insereUsuario', urlencodedParser, (req, res) => {
 app.get('/find_user', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
-	sql = "SELECT * FROM Pessoa WHERE ID=" + req.query.userId;
+	// sql = "SELECT * FROM Pessoa WHERE ID=" + req.query.userId;
+	sql = `SELECT * FROM Pessoa 
+	INNER JOIN Experiencia ON Pessoa.ID = Experiencia.ID_pessoa
+	INNER JOIN Formacao ON Pessoa.ID = Formacao.ID_pessoa
+	INNER JOIN Habilidades ON Pessoa.ID = Habilidades.ID_pessoa
+	INNER JOIN Personalidades ON Pessoa.ID = Personalidades.ID_pessoa
+	INNER JOIN Realizacoes ON Pessoa.ID = Realizacoes.ID_pessoa 
+	WHERE Pessoa.ID = ${req.query.userId}`
 	console.log(sql);
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.all(sql, [],  (err, rows ) => {
@@ -195,5 +202,5 @@ app.get('/personalidades', (req, res) => {
 
 
 app.listen(port, hostname, () => {
-  console.log(`Servidor rodando em http://${hostname}:${port}/`);
+  console.log(`Servidor rodando em http://${hostname}:${port}/?userId=1`);
 });

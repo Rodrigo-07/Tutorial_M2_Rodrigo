@@ -78,6 +78,19 @@ $.get(`http://localhost:3000/find_user?userId=${parseInt(user)}`, function(resul
         $("#Name").text(`${resultado[0].Nome}` + " " + `${resultado[0].Sobrenome}`);
         $("#Email").text(`${resultado[0].Email}`);
         $("#Phone").text(`${resultado[0].Telefone}`);
+        $("#Linkedin").text(`${resultado[0].Linkedln}`);
+        $("#Github").text(`${resultado[0].Github}`);
+        $("#Conquista1").text(`${resultado[0].Título}`);
+        $("#Habilidade1").text(`${resultado[0].Habilidade}`);
+        $("#Habilidade-Interpessoal1").text(`${resultado[0].Traco_de_personalidade}`);
+        $("#Nome-formacao").text(`${resultado[0].Curso}`);
+        $("#Nome-instuicao").text(`${resultado[0].Instituicao}`);
+        $("#Nome-cargo").text(`${resultado[0].Cargo}`);        
+        $("#Nome-empresa").text(`${resultado[0].Empresa}`);
+
+
+        
+
         console.log(resultado[0].Nome);
         console.log(resultado[0].Telefone);
         console.log(resultado[0].Email);
